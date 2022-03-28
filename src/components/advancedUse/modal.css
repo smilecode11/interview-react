@@ -1,0 +1,11 @@
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 520px;
+  height: 320px;
+  background: rgb(218, 24, 24);
+  color: aliceblue;
+  z-index: 9999;
+}
