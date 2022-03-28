@@ -1,6 +1,8 @@
 import React from "react";
-import UnControlledDemo from "./UnControlledDemo";
-import PortalsDemo from './PortalsDemo'
+// import UnControlledDemo from "./UnControlledDemo";
+// import PortalsDemo from './PortalsDemo'
+// import ContextDemo from "./ContextDemo";
+import LazyDemo from "./LazyDemo";
 
 class AdvancedUse extends React.Component {
   constructor(props) {
@@ -9,8 +11,10 @@ class AdvancedUse extends React.Component {
   render() {
     return (
       <>
-        <UnControlledDemo />
-        <PortalsDemo>Portals Demo</PortalsDemo>
+        {/* <UnControlledDemo /> */}
+        {/* <PortalsDemo>Portals Demo</PortalsDemo> */}
+        {/* <ContextDemo /> */}
+        <LazyDemo />
       </>
     );
   }
