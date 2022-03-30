@@ -1,8 +1,9 @@
 /** 获取 todo*/
-export const getTodoList = () => {
+export const getTodoList = (condition) => {
     return {
         type: "GET_TODO_LIST",
-        description: "获取 todo"
+        description: "获取 todo",
+        value: condition
     }
 }
 
@@ -12,6 +13,16 @@ export const addTodo = (todo) => {
         type: "ADD_TODO",
         description: "新增 todo",
         value: todo
+    }
+}
+
+/** 异步添加 todo*/
+export const addTodoASync = todo => {
+    // 返回一个函数, 其中有 dispatch 参数, 用于指定同步 action 执行
+    return (dispatch) => {
+        fetch('url').then(res => {
+            dispatch(addTodo(todo))
+        })
     }
 }
 
@@ -41,6 +52,8 @@ export const delTodo = (id) => {
         value: id
     }
 }
+
+
 
 export default {
     getTodoList,

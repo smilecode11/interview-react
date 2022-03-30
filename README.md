@@ -7,6 +7,17 @@
 - 非受控组件, ref
 - Portals
 - context
+- 高阶组件使用
+
+### Redux 
+* dispatch(action) -> reducer
+* reducer -> state
+* store 关联 action 和 reducer
+* store.subscribe(()=> store.getState())
+
+### React-Redux
+* Provider 组件 - 能使整个 app 获取到 store 中的数据
+* connect 方法 - 使组件和 store 进行关联
 
 ## 提交 git
 

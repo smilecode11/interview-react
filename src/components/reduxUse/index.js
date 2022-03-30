@@ -1,6 +1,7 @@
 import React from 'react'
-import todoStore from './store/TodoStore'
+import todoStore from './store'
 import "./index.css"
+import FilterFooter from './FilterFooter'
 
 import {
     getTodoList,
@@ -58,6 +59,8 @@ export default class ReduxUse extends React.Component {
                     })}
                 </ul>
             </div>
+            <hr />
+            <FilterFooter />
         </div>)
     }
     componentDidMount() {
