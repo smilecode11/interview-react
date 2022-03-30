@@ -6,7 +6,8 @@ import React from "react";
 // import SCUDemo from './SCUDemo'
 // import SUCDemo2 from './SCUDemo2'
 // import PureComponentDemo from './PureComponentDemo'
-import HOCDemo from "./HOCDemo";
+// import HOCDemo from "./HOCDemo";
+import RenderPropsDemo from "./RenderPropsDemo";
 
 class AdvancedUse extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class AdvancedUse extends React.Component {
         {/* <SCUDemo /> */}
         {/* <SUCDemo2 /> */}
         {/* <PureComponentDemo /> */}
-        <HOCDemo />
+        {/* <HOCDemo /> */}
+        <RenderPropsDemo text="render props text..."/>
       </>
     );
   }

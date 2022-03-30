@@ -1,8 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-import BaseUseDemo from "./components/baseUse";
-import AdvancedUse from "./components/advancedUse";
+// import BaseUseDemo from "./components/baseUse";
+// import AdvancedUse from "./components/advancedUse";
+import ReduxUse from './components/reduxUse'
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <div className="main">
         {/* <BaseUseDemo /> */}
         {/* <hr /> */}
-        <AdvancedUse />
+        {/* <AdvancedUse /> */}
+        {/* <hr /> */}
+        <ReduxUse />
       </div>
     </div>
   );
