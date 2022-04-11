@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 
 import ClickCounter from './ClickCounter'
-// import ClickCounterClass from './ClickCounterClass'
+import ClickCounterClass from './ClickCounterClass'
 import LifeCycles from './LifeCycles'
-// import FriendStatusClass from './FriendStatusClass'
+import FriendStatusClass from './FriendStatusClass'
 import FriendStatus from './FriendStatus'
 import UseRefDemo from './UseRefDemo'
-
 import UseContextDemo from './UseContextDemo'
 import UseReducerDemo from './UseReducerDemo'
+import UseMemoDemo from './UseMemoDemo'
+import UseCallbackDemo from './UseCallback'
 
 function HooksUse() {
 
@@ -17,15 +18,15 @@ function HooksUse() {
 
     return (<>
         <h3>HooksUse</h3>
+        <hr />
         <ClickCounter />
-        {/* <hr /> */}
-        {/* <ClickCounterClass /> */}
+        <ClickCounterClass />
         <hr />
         <button onClick={() => setFlag(!flag)}>toggle LifyCycle</button>
         {flag && <LifeCycles />}
         <hr />
         <button onClick={() => setFriendId(friendId + 1)}>change friendId</button>
-        {/* <FriendStatusClass friendId={friendId} /> */}
+        <FriendStatusClass friendId={friendId} />
         <FriendStatus friendId={friendId} />
         <hr />
         <UseRefDemo />
@@ -33,6 +34,10 @@ function HooksUse() {
         <UseContextDemo />
         <hr />
         <UseReducerDemo />
+        <hr />
+        <UseMemoDemo />
+        <hr />
+        <UseCallbackDemo />
     </>)
 }
 

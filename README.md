@@ -25,6 +25,7 @@
 * useRef
 * useContext
 * useReducer
+* useMemo
 
 ## 提交 git
 
