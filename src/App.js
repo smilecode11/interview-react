@@ -7,7 +7,8 @@ import store from './components/reduxUse/store'
 
 // import BaseUseDemo from "./components/baseUse";
 // import AdvancedUse from "./components/advancedUse";
-import ReduxUse from './components/reduxUse'
+// import ReduxUse from './components/reduxUse'
+import HooksUse from "./components/hooksUse";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
           {/* <hr /> */}
           {/* <AdvancedUse /> */}
           {/* <hr /> */}
-          <ReduxUse />
+          {/* <ReduxUse /> */}
+          <hr />
+          <HooksUse />
         </div>
       </div>
     </Provider>
