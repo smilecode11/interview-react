@@ -7,7 +7,8 @@ import LifeCycles from './LifeCycles'
 import FriendStatus from './FriendStatus'
 import UseRefDemo from './UseRefDemo'
 
-import UseCopntextDemo from './UseContextDemo'
+import UseContextDemo from './UseContextDemo'
+import UseReducerDemo from './UseReducerDemo'
 
 function HooksUse() {
 
@@ -29,7 +30,9 @@ function HooksUse() {
         <hr />
         <UseRefDemo />
         <hr />
-        <UseCopntextDemo />
+        <UseContextDemo />
+        <hr />
+        <UseReducerDemo />
     </>)
 }
 
