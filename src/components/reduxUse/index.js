@@ -1,5 +1,7 @@
 import React from 'react'
 import todoStore from './store'
+import filterStore from './store/filterStore'
+
 import "./index.css"
 import FilterFooter from './FilterFooter'
 
@@ -11,12 +13,15 @@ import {
     refreshTodo
 } from './actions/TodoActions'
 
+import { getFilter, selectFilter } from './actions/FilterActions'
+
 export default class ReduxUse extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             todoList: [],
-            title: ''
+            title: '',
+            view: 'all'
         }
     }
     handleInput(value) {
@@ -50,20 +55,39 @@ export default class ReduxUse extends React.Component {
             </div>
             <div className='todo-list-wrap'>
                 <ul className='todo-list'>
-                    {this.state.todoList.map(todo => {
-                        return <li key={todo.id}>
-                            <span onClick={() => this.handleStatusChange(todo)} className={todo.status === 1 ? 'text-line-through' : ''}>{todo.title}</span>
-                            &nbsp;
-                            <span onClick={() => this.handleDel(todo.id)}>❎</span>
-                        </li>
-                    })}
+                    {
+                        (this.state.view === 'all' || this.state.view === undefined) &&
+                        this.state.todoList
+                            .map(todo => this.renderLiElement(todo))
+                    }
+                    {
+                        this.state.view === 'active' &&
+                        this.state.todoList
+                            .filter(todo => todo.status === 1)
+                            .map(todo => this.renderLiElement(todo))
+                    }
+                    {
+                        this.state.view === 'completed' &&
+                        this.state.todoList
+                            .filter(todo => todo.status === 0)
+                            .map(todo => this.renderLiElement(todo))
+                    }
                 </ul>
             </div>
-            <hr />
-            <FilterFooter />
+            <FilterFooter filter={this.state.view} />
         </div>)
     }
+    renderLiElement(todo) {
+        return (
+            <li key={todo.id}>
+                <span onClick={() => this.handleStatusChange(todo)} className={todo.status === 1 ? 'text-line-through' : ''}>{todo.title}</span>
+                &nbsp;
+                <span onClick={() => this.handleDel(todo.id)}>❎</span>
+            </li>
+        )
+    }
     componentDidMount() {
+
         // 初始化 todoList
         todoStore.dispatch(getTodoList())
         this.setState({
@@ -75,6 +99,19 @@ export default class ReduxUse extends React.Component {
             const list = todoStore.getState();
             this.setState({
                 todoList: list
+            })
+
+        })
+
+        //  初始化 filter
+        filterStore.dispatch(getFilter())
+        this.setState({
+            view: (filterStore.getState())['view']
+        })
+
+        filterStore.subscribe(() => {
+            this.setState({
+                view: (filterStore.getState())['view']
             })
         })
     }
