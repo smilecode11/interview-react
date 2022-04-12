@@ -10,13 +10,16 @@ import UseContextDemo from './UseContextDemo'
 import UseReducerDemo from './UseReducerDemo'
 import UseMemoDemo from './UseMemoDemo'
 import UseCallbackDemo from './UseCallback'
+import CustomHookDemo from './CustomHookDemo'
+import UseStateTrap from './UseStateTrap'
+import UseEffectChangeState from './UseEffectChangeState'
 
 function HooksUse() {
 
     const [flag, setFlag] = useState(true)
     const [friendId, setFriendId] = useState(1)
 
-    return (<>
+    return (<div style={{ paddingBottom: '240px' }}>
         <h3>HooksUse</h3>
         <hr />
         <ClickCounter />
@@ -38,7 +41,13 @@ function HooksUse() {
         <UseMemoDemo />
         <hr />
         <UseCallbackDemo />
-    </>)
+        <hr />
+        <CustomHookDemo />
+        <hr />
+        <UseStateTrap />
+        <hr />
+        <UseEffectChangeState />
+    </div>)
 }
 
 export default HooksUse
